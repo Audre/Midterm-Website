@@ -70,7 +70,7 @@ x.style.background="white";
                 <div class="panel panel-default">
                     <div class="panel-heading text-center"><p>Contact Us</p></div>
                     <div class="panel-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal" id="contactForm">
                             <fieldset>
                                 <div class="form-group">
                                     <label for="inputName" class="col-sm-2 control-label">Name</label>
@@ -100,14 +100,14 @@ x.style.background="white";
                                 <div class="form-group" id="form-id">
                                     <div class="col-sm-10 col-lg-offset-2">
                                         <button type="reset" class="btn btn-default">Cancel</button>
-                                        <button type ="submit" id ="message" class="btn btn-primary">Submit</button>
+                                        <button id ="submitButton" type ="submit"  class="btn btn-primary">Submit</button>
                                         <script>
-                                            var form = document.getElementById("form-id"); 
-                                            document.getElementById("message").addEventListener("submit", function() {
-                                                form.submit();
-                                                });
-                                            console.write("hi");
-                                            
+                                            document.getElementById("submitButton").addEventListener("click", function(){
+                                                var names = document.getElementById("contactForm");
+                                                var submitName = names.elements["inputName"].value;
+                                                alert("Thank you, " + submitName + "! Your message has been sent.");
+                                            });
+
                                         </script>
                                       
                         
